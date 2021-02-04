@@ -1,0 +1,9 @@
+{% block content %}
+
+  <h2>ソーシャルサービスを選択してログイン</h2>
+  <ul>
+    <li><a href="{% url 'social:begin' 'twitter' %}">Twitterでログイン</a></li>
+  </ul>
+
+  <a href="{% url 'index' %}">戻る</a>
+{% endblock content %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>test_data1モデル</h1>
+    <p>{{ message }}</p>
+    <table border="1">
+        <tr>
+            <th>ユーザー名</th>
+            <th>内容</th>
+            <th>登録日</th>
+        </tr>
+        {% for test in test_list  %}
+        <tr>
+            <td>{{ test.username }}</td>
+            <td>{{ test.textfield1 | linebreaks }}</td>
+            <td>{{ test.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Twitterフォロー一覧データモデル表示</h1>
+    <p>{{ message }}</p>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>名前</th>
+        </tr>
+        {% for test in APIWK  %}
+        <tr>
+            <td>{{ test.twitter_id }}</td>
+            <td>{{ test.user_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

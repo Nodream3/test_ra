@@ -1,0 +1,18 @@
+<h1>トップページぺこ</h1>
+{% block content %}
+    {% if user.is_authenticated %}
+        <h1>{{ user.username }}さんがログイン中です</h1>
+        <a href="{% url 'test1:forms' %}">フォームへ</a><br>
+        <a href="{% url 'test1:data_list' %}">data_listへ</a><br>
+        <a href="{% url 'test1:runAPI' %}">フォロー取得API実行(バカ重いので注意)</a><br>
+        <a href="{% url 'test1:friend_list' %}">フォロー一覧へ</a><br>
+
+        <a href="{% url 'logout' %}">ログアウト</a>
+    {% else %}
+        <h1>メインメニュー</h1>
+        <p>メニューと言いつつログインする他選択肢は無い</p>
+        <a href="{% url 'login' %}">ログインする</a>
+
+    {% endif %}
+
+{% endblock content %}
