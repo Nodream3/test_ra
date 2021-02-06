@@ -11,9 +11,9 @@ try:
     from .local_settings import *
 
     SECRET_KEY = S_K  # これはdjangoのキーだったはず・・・多分
-    # APIキーとAPIキーシークレット貼り付けする
-    SOCIAL_AUTH_TWITTER_KEY = "***"
-    SOCIAL_AUTH_TWITTER_SECRET = "***"
+    # local_settingsにAPIキーとAPIキーシークレット貼り付けする
+    SOCIAL_AUTH_TWITTER_KEY = TWITTER_KEY
+    SOCIAL_AUTH_TWITTER_SECRET = TWITTER_SECRET
     DEBUG = True
 
 #  ローカルではsqlite3に書き込む

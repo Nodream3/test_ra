@@ -46,7 +46,7 @@ def runAPI(request):
     url = "https://api.twitter.com/1.1/friends/list.json"  # エンドポイントURL貼り付け
     filename = 'aaaaa.json'
 
-    params = {'user_id': [request.user.id], 'count': [200]}  # パラメータが必要なエンドポイントの場合、json形式でここに記載
+    params = {'user_id': user, 'count': [200]}
 
     res = twitter.get(url, params=params)
 
