@@ -1,1 +1,1 @@
-web: gunicorn test_he.wsgi --log-file -
+web: gunicorn test_auth.wsgi --log-file -
