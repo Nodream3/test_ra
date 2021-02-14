@@ -4,5 +4,3 @@
 __pycache__/
 media
 venv/
-
-/test_he/local_settings.py
