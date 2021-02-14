@@ -7,35 +7,35 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 hostname = gethostname()
 DEBUG = False
 
-# try:
-#     from .local_settings import *
-#
-#     # SECRET_KEY = S_K  # これはdjangoのキーだったはず・・・多分
-#     # # local_settingsにAPIキーとAPIキーシークレット貼り付けする
-#     # SOCIAL_AUTH_TWITTER_KEY = TWITTER_KEY
-#     # SOCIAL_AUTH_TWITTER_SECRET = TWITTER_SECRET
-#     DEBUG = True
-#
-# #  ローカルではsqlite3に書き込む
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
+try:
+    from .local_settings import *
 
-# except ImportError:
-# 本番環境の環境変数想定
-SECRET_KEY = os.environ.get('SECRET_KEY')
-SOCIAL_AUTH_TWITTER_KEY = os.environ.get('SOCIAL_AUTH_TWITTER_KEY')
-SOCIAL_AUTH_TWITTER_SECRET = os.environ.get('SOCIAL_AUTH_TWITTER_SECRET')
-import dj_database_url
+    SECRET_KEY = S_K  # これはdjangoのキーだったはず・・・多分
+    # local_settingsにAPIキーとAPIキーシークレット貼り付けする
+    SOCIAL_AUTH_TWITTER_KEY = TWITTER_KEY
+    SOCIAL_AUTH_TWITTER_SECRET = TWITTER_SECRET
+    DEBUG = True
 
-db_from_env = dj_database_url.config()
-DATABASES = {
-    'default': dj_database_url.config()
-}
-# pass
+    #  ローカルではsqlite3に書き込む
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+except ImportError:
+    # 本番環境の環境変数想定
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SOCIAL_AUTH_TWITTER_KEY = os.environ.get('SOCIAL_AUTH_TWITTER_KEY')
+    SOCIAL_AUTH_TWITTER_SECRET = os.environ.get('SOCIAL_AUTH_TWITTER_SECRET')
+    import dj_database_url
+
+    db_from_env = dj_database_url.config()
+    DATABASES = {
+        'default': dj_database_url.config()
+    }
+pass
 
 ALLOWED_HOSTS = ['*']
 

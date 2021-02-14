@@ -1,5 +1,9 @@
 <h1>トップページぺこ</h1>
 {% block content %}
+
+<a href="{% url 'test1:forms' %}">フォームへ</a><br>
+<a href="{% url 'test1:data_list' %}">data_listへ</a><br>
+
     {% if user.is_authenticated %}
         <h1>{{ user.username }}さんがログイン中です</h1>
         <a href="{% url 'test1:forms' %}">フォームへ</a><br>
